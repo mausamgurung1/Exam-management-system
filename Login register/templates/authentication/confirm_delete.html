@@ -1,0 +1,7 @@
+<h2>Confirm Delete</h2>
+<p>Are you sure you want to delete mark for {{ mark.student.username }} - {{ mark.subject }}?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Yes, Delete</button>
+  <a href="{% url 'admin_dashboard' %}">Cancel</a>
+</form>

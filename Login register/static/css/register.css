@@ -1,0 +1,77 @@
+/* register.css */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../images/k.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .register-container {
+    width: 900px;
+    margin: 60px auto;
+    background-color: #fff;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .register-left {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .register-left img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  
+  .register-left p {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .register-right {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .register-right h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1957f2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #0f40c0;
+  }
+  
+  .register-right p {
+    text-align: center;
+    margin-top: 15px;
+  }
+  

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Update Obtained Marks (OM)</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <table border="1" cellspacing="0" cellpadding="10">
+    <tr>
+      <th>Student</th>
+      <th>Subject</th>
+      <th>Full Marks</th>
+      <th>Obtained Marks</th>
+    </tr>
+    {% for mark, form in forms_list %}
+    <tr>
+      <td>{{ mark.student.username }}</td>
+      <td>{{ mark.subject }}</td>
+      <td>{{ mark.full_marks }}</td>
+      <td>{{ form.obtained_marks }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br>
+  <button type="submit">Save Changes</button>
+</form>
+
+<a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+{% endblock %}

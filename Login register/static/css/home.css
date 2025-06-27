@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Rubik', sans-serif;
+    background: url("../images/k.jpg") no-repeat center center/cover; /* Your background image */
+    height: 100vh;
+    color: white; /* white text on black background */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: white;  /* white text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* subtle shadow for visibility */
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: white;  /* white text */
+  }
+  
+  .nav-buttons {
+    margin-top: 120px;  /* Adjust this to move the buttons further down */
+  }
+  
+  .nav-buttons a {
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-weight: 600;
+    padding: 14px 35px;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-buttons a:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.07);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  }
+  
+  footer {
+    font-size: 0.85em;
+    color: white; /* make footer text white */
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  footer p {
+    margin: 10px 0;
+  }
+  
+  /* Manage Students section (new addition) */
+  .manage-students {
+    margin-top: 30px;
+    font-size: 1.3em;
+    color: white; /* white text for this section */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  
+  .manage-students a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Floating Animation */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  

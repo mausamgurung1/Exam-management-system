@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Exam Management System</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <div class="overlay"></div>
+  
+  <div class="container">
+    <h1>Welcome to Student Exam Management System</h1>
+    <p>Manage Students, Exams, and Results Easily</p>
+
+    <div class="nav-buttons">
+      <a href="{% url 'signin' %}">Student Login</a>
+      <a href="{% url 'signup' %}">Student Signup</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Libali, Bhaktapur</p>
+  </footer>
+
+</body>
+</html>

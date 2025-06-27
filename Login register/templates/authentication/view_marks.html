@@ -1,0 +1,18 @@
+<!-- templates/authentication/view_marks.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Marks</title>
+</head>
+<body>
+    <h2>Semesters for {{ profile.user.username }}</h2>
+    <ul>
+        {% for semester in semesters %}
+        <li>
+            <a href="{% url 'edit_marks' profile.id semester %}">Edit Marks for Semester {{ semester }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'admin_dashboard' %}">Back to Dashboard</a>
+</body>
+</html>

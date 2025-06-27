@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Internal Marks Table</title>
+  <link rel="stylesheet" href="{% static 'css/imarks.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  
+  <!-- Semester selection boxes -->
+  <div class="semester-selection">
+    <h1>Select Semester</h1>
+    <div class="semester-container">
+      <div class="semester-box" data-sem="1st">1st Semester</div>
+      <div class="semester-box" data-sem="2nd">2nd Semester</div>
+      <div class="semester-box" data-sem="3rd">3rd Semester</div>
+      <div class="semester-box" data-sem="4th">4th Semester</div>
+      <div class="semester-box" data-sem="5th">5th Semester</div>
+    </div>
+  </div>
+
+
+
+
+      {% for sem, marks in semester_wise.items %}
+      <div class="container">
+        <h1>Internal Marks Overview</h1>
+        <div class="content-flex">
+      <div class="semester-block" id="block-{{ sem }}" style="display: none;">
+        <button class="back-button">← Back to Semesters</button>
+        <h2>{{ sem }} Semester</h2>
+    
+        <div class="table-wrapper">
+          <table class="marks-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Subject</th>
+                <th colspan="3">Theory</th>
+                <th colspan="3">Practical</th>
+              </tr>
+              <tr>
+                <th>FM</th>
+                <th>PM</th>
+                <th>OM</th>
+                <th>FM</th>
+                <th>PM</th>
+                <th>OM</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for m in marks %}
+                <tr>
+                  <td>{{ m.subject }}</td>
+                  <td>{{ m.theory_full_marks }}</td>
+                  <td>{{ m.theory_pass_marks }}</td>
+                  <td class="{% if m.theory_obtained_marks < m.theory_pass_marks %}fail{% else %}highlight{% endif %}">{{ m.theory_obtained_marks }}</td>
+                  <td>{{ m.practical_full_marks }}</td>
+                  <td>{{ m.practical_pass_marks }}</td>
+                  <td class="{% if m.practical_obtained_marks < m.practical_pass_marks %}fail{% else %}highlight{% endif %}">{{ m.practical_obtained_marks }}</td>
+                </tr>
+              {% empty %}
+                <tr><td colspan="7">No internal marks available for this semester.</td></tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+    
+        <!-- Chart for each semester -->
+        <div class="chart-wrapper">
+          <canvas id="marksPieChart{{ sem }}"></canvas>
+        </div>
+    
+        <!-- Legend for each semester -->
+        <div id="chart-legend-{{ sem }}" class="chart-legend"></div>
+      </div>
+    {% endfor %}
+    
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+  <script>
+    const chartData = JSON.parse('{{ marks_json|escapejs }}');
+  </script>
+  
+
+  <script src="{% static 'js/imarks.js' %}"></script>
+
+  <a href="{% url 'dashboard' %}" class="back-dashboard-floating">← Back to Dashboard</a>
+
+</body>
+</html>
+
+

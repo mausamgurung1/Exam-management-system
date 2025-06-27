@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../images/k.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;  /* Full height of the viewport */
+  display: flex;  /* Flexbox for centering */
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+}
+
+.main-container {
+  display: flex;
+  width: 1000px;  /* Increased the width to give more space */
+  height: 520px;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  justify-content: center;  /* Center content in the main container */
+}
+
+.left-side {
+  width: 45%;  /* Reduced width to make more space for the sign-in */
+  background: #edf1f7;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Center content vertically */
+  padding: 30px;
+  text-align: left;
+}
+
+.left-side img {
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.left-bottom .brand {
+  margin-top: 20px;
+}
+
+.left-bottom p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;  /* Adjusted line-height for better readability */
+  margin-top: 8px;
+}
+
+.social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+.right-side {
+  width: 55%;  /* Increased width for the sign-in form */
+  padding: 50px 40px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Center the form vertically */
+  align-items: center;
+}
+
+.right-side h2 {
+  font-size: 28px;  /* Increased font size */
+  margin-bottom: 10px;
+}
+
+.right-side p {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;  /* Keep the width as it was */
+  padding: 10px 15px;  /* Adjust padding for height */
+  height: 40px;  /* Increased height to make the input box longer vertically */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #1957f2;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #154ed1;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.small {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e9eef6;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.social a:hover {
+  background-color: #1957f2;
+  color: #fff;
+}
+
+.social i {
+  font-size: 18px;
+}

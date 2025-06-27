@@ -1,0 +1,78 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.calendar-container {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.month {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.month-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  font-size: 1rem;
+}
+
+.day {
+  padding: 10px;
+  text-align: center;
+}
+
+.day-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.day-number {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.day-number.holiday {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.day-number.working-day {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.day-number:hover {
+  opacity: 0.8;
+}

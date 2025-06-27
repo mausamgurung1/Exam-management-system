@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>
+        {% if profile.profile_image %}
+          <img src="{{ profile.profile_image.url }}" alt="Profile Image" style="width:150px; height:150px; border-radius:50%;">
+        {% else %}
+          <img src="{% static 'images/default-profile.png' %}" alt="Default Profile Image" style="width:150px; height:150px; border-radius:50%;">
+        {% endif %}
+        Dashboard
+      </h3>
+      <ul>
+        <li>
+          <a href="dashboard">
+            <i class="fas fa-user"></i> Profile
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-calendar-alt"></i> Class Info
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'internal_marks_view' %}">
+            <i class="fas fa-clipboard-list"></i> Internal Marks
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chart-bar"></i> Assessment Results
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="{% static 'images/dashboard-icon.png' %}" alt="Final Results Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+            Final Results
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <h2>Student Dashboard</h2>
+
+      <!-- Profile Section -->
+      <div class="profile">
+        {% if profile.profile_image %}
+          <img src="{{ profile.profile_image.url }}" alt="Profile Image" style="width:150px; height:150px; border-radius:50%;">
+        {% else %}
+          <img src="{% static 'images/default-profile.png' %}" alt="Default Profile Image" style="width:150px; height:150px; border-radius:50%;">
+        {% endif %}
+        <div class="info">
+          <p><strong>Name:</strong> {{ profile.user.get_full_name }}</p>
+          <p><strong>Roll No:</strong> {{ profile.rollno }}</p>
+          <p><strong>Address:</strong> {{ profile.address }}</p>
+          <p><strong>Phone:</strong> {{ profile.phno }}</p>
+          <p><strong>Gender:</strong> {{ profile.gender }}</p>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <h2>Attendance</h2>
+        <div id="chart-pyramid"></div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+  </body>
+</html>
